@@ -1,0 +1,6 @@
+---
+# defaults file for httpdi
+
+httpd_user: apache
+
+httpd_group: apache

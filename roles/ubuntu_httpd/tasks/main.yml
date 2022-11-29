@@ -1,0 +1,27 @@
+---
+# tasks file for httpd
+# 
+- name: install httpd
+  ansible.builtin.yum:
+    name: httpd
+    state: installed
+
+- name: start and enable httpd
+  ansible.builtin.service:
+    name: httpd
+    state: started
+    enabled: yes
+
+- name: copy index.html
+  ansible.builtin.copy:
+    src: index.html 
+    dest: /var/www/html/index.html
+
+- name: reconfigure port number
+  template:
+    src: httpd.conf.j2
+    dest: /etc/httpd/conf/httpd.conf
+  notify:
+    - restart httpd
+
+...

@@ -1,0 +1,6 @@
+---
+# defaults file for install_apache
+
+httpd_user: apache
+
+httpd_group: apache

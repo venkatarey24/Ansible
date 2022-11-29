@@ -1,0 +1,7 @@
+---
+# handlers file for install_apache
+
+- name: restart httpd
+  ansible.builtin.service:
+    name: httpd
+    state: restarted
